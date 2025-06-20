@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import calendarIcon from '../../static/assets/icons/calendar-event.svg';
+
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -39,7 +41,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a href="#about" style={{ textDecoration: "none", color: "#333" }}>About</a>
-                    <a href="#booknow" style={{ textDecoration: "none", color: "#333" }}>Book Now</a>
+                    <a href="#booknow" style={{ textDecoration: "none", color: "#333", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        Book Now
+                        <img src={calendarIcon} alt="Book Now" style={{ width: '20px', height: '20px', verticalAlign: 'middle' }} />
+                    </a>
                 </div>
             </div>
         </nav>
