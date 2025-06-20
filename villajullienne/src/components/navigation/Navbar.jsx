@@ -62,7 +62,7 @@ const Navbar = () => {
                 {/* Logo or Brand */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <img src={navbarLogo} alt="Villa Jullienne Logo" style={{ height: '50px', width: 'auto', display: 'block' }} />
-                    <span style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                    <span style={{ fontWeight: "bold", fontSize: "2.0rem" }}>
                         Villa Jullienne
                     </span>
                 </div>
