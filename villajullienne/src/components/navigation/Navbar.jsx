@@ -5,6 +5,40 @@ import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    // Simple dropdown styles
+    const dropdownStyles = {
+        opacity: dropdownOpen ? 1 : 0,
+        transform: dropdownOpen ? 'translateY(0)' : 'translateY(-8px)',
+        pointerEvents: dropdownOpen ? 'auto' : 'none',
+        transition: 'opacity 0.2s, transform 0.2s',
+        position: "absolute",
+        top: "100%",
+        left: 0,
+        background: "#fff",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        borderRadius: "6px",
+        listStyle: "none",
+        margin: 0,
+        padding: "0.25rem 0",
+        minWidth: "140px",
+        zIndex: 1000,
+        border: '1px solid #e0e0e0',
+    };
+    const dropdownItemStyle = {
+        padding: '0.5rem 1rem',
+        color: '#222',
+        textDecoration: 'none',
+        background: 'none',
+        border: 'none',
+        borderRadius: 0,
+        display: 'block',
+        fontSize: '1rem',
+        cursor: 'pointer',
+        transition: 'background 0.15s',
+    };
+    const dropdownItemHover = {
+        background: '#f2f2f2',
+    };
     return (
         <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0" }}>
             <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 2rem" }}>
@@ -23,25 +57,26 @@ const Navbar = () => {
                         onMouseEnter={() => setDropdownOpen(true)}
                         onMouseLeave={() => setDropdownOpen(false)}
                     >
-                    <a href="#amenities" style={{ textDecoration: "none", color: "#333", position: "relative" }}>Amenities</a>
-                        <ul style={{
-                            display: dropdownOpen ? "block" : "none",
-                            position: "absolute",
-                            top: "100%",
-                            left: 0,
-                            background: "transparent",
-                            boxShadow: "none",
-                            listStyle: "none",
-                            margin: 0,
-                            padding: "0.5rem 0",
-                            minWidth: "150px",
-                            zIndex: 1000
-                        }}>
-                            <li style={{ marginBottom: '0.5rem' }}><a href="#restaurant" style={{ display: "block", padding: "0.5rem 1rem", color: "#333", textDecoration: "none", whiteSpace: "nowrap", background: '#b3d8fd', borderRadius: '10px 50px 15px', transition: 'background 0.2s', border: '1px solid #000' }} onMouseEnter={e => e.target.style.background = '#90c7fa'} onMouseLeave={e => e.target.style.background = '#b3d8fd'}>Restaurant</a></li>
-                            <li style={{ marginBottom: '0.5rem' }}><a href="#salon" style={{ display: "block", padding: "0.5rem 1rem", color: "#333", textDecoration: "none", whiteSpace: "nowrap", background: '#ffd1c1', borderRadius: '10px 50px 15px', transition: 'background 0.2s', border: '1px solid #000' }} onMouseEnter={e => e.target.style.background = '#ffb6a7'} onMouseLeave={e => e.target.style.background = '#ffd1c1'}>Salon</a></li>
-                            <li style={{ marginBottom: '0.5rem' }}><a href="#artgallery" style={{ display: "block", padding: "0.5rem 1rem", color: "#333", textDecoration: "none", whiteSpace: "nowrap", background: '#fff8dc', borderRadius: '10px 50px 15px', transition: 'background 0.2s', border: '1px solid #000' }} onMouseEnter={e => e.target.style.background = '#ffe4b5'} onMouseLeave={e => e.target.style.background = '#fff8dc'}>Art Gallery</a></li>
-                            <li style={{ marginBottom: '0.5rem' }}><a href="#chapel" style={{ display: "block", padding: "0.5rem 1rem", color: "#333", textDecoration: "none", whiteSpace: "nowrap", background: '#e6e6fa', borderRadius: '10px 50px 15px', transition: 'background 0.2s', border: '1px solid #000' }} onMouseEnter={e => e.target.style.background = '#d1c4e9'} onMouseLeave={e => e.target.style.background = '#e6e6fa'}>Chapel</a></li>
-                            <li><a href="#communalpool" style={{ display: "block", padding: "0.5rem 1rem", color: "#333", textDecoration: "none", whiteSpace: "nowrap", background: '#b2fff7', borderRadius: '10px 50px 15px', transition: 'background 0.2s', border: '1px solid #000' }} onMouseEnter={e => e.target.style.background = '#a0e7e5'} onMouseLeave={e => e.target.style.background = '#b2fff7'}>Communal Pool</a></li>
+                        <a href="#amenities" style={{ textDecoration: "none", color: "#333", position: "relative" }}>Amenities</a>
+                        <ul style={dropdownStyles}>
+                            {[
+                                { href: "#restaurant", label: "Restaurant" },
+                                { href: "#salon", label: "Salon" },
+                                { href: "#artgallery", label: "Art Gallery" },
+                                { href: "#chapel", label: "Chapel" },
+                                { href: "#communalpool", label: "Communal Pool" },
+                            ].map((item, idx) => (
+                                <li key={item.href} style={{ margin: 0 }}>
+                                    <a
+                                        href={item.href}
+                                        style={dropdownItemStyle}
+                                        onMouseEnter={e => e.target.style.background = dropdownItemHover.background}
+                                        onMouseLeave={e => e.target.style.background = dropdownItemStyle.background}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <a href="#about" style={{ textDecoration: "none", color: "#333" }}>About</a>
