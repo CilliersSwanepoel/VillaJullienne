@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import calendarIcon from '../../static/assets/icons/calendar-event.svg';
+import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
 
 const Navbar = () => {
@@ -8,8 +9,11 @@ const Navbar = () => {
         <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0" }}>
             <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 2rem" }}>
                 {/* Logo or Brand */}
-                <div style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-                    Villa Jullienne
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <img src={navbarLogo} alt="Villa Jullienne Logo" style={{ height: '50px', width: 'auto', display: 'block' }} />
+                    <span style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                        Villa Jullienne
+                    </span>
                 </div>
                 {/* Navigation Links */}
                 <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", position: "relative" }}>
