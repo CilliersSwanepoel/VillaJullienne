@@ -40,7 +40,24 @@ const Navbar = () => {
         background: '#f2f2f2',
     };
     return (
-        <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0" }}>
+        <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0", position: "relative" }}>
+            {/* Rainbow wave SVG at the bottom */}
+            <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', height: '24px', pointerEvents: 'none', zIndex: 2 }}>
+                <svg viewBox="0 0 1440 24" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
+                    <defs>
+                        <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#f8b195" />   {/* soft coral */}
+                            <stop offset="16%" stopColor="#f6eac2" />   {/* soft beige */}
+                            <stop offset="33%" stopColor="#b5ead7" />   {/* soft mint */}
+                            <stop offset="50%" stopColor="#c7ceea" />   {/* soft blue */}
+                            <stop offset="66%" stopColor="#a7c7e7" />   {/* muted blue */}
+                            <stop offset="83%" stopColor="#d4a5a5" />   {/* muted mauve */}
+                            <stop offset="100%" stopColor="#f8b195" />  {/* soft coral */}
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,12 C360,36 1080,-12 1440,12 L1440,24 L0,24 Z" fill="url(#rainbow-gradient)"/>
+                </svg>
+            </div>
             <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 2rem" }}>
                 {/* Logo or Brand */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
