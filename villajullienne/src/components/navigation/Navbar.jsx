@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import calendarIcon from '../../static/assets/icons/calendar-event.svg';
 import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
@@ -10,15 +10,26 @@ const navLinks = [
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownTimeout = useRef(null);
 
-    // Dropdown styles remain unchanged
+    const handleDropdownEnter = () => {
+        if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+        setDropdownOpen(true);
+    };
+
+    const handleDropdownLeave = () => {
+        dropdownTimeout.current = setTimeout(() => {
+            setDropdownOpen(false);
+        }, 500);
+    };
+
     const dropdownStyles = {
         opacity: dropdownOpen ? 1 : 0,
         transform: dropdownOpen ? 'translateY(0)' : 'translateY(-8px)',
         pointerEvents: dropdownOpen ? 'auto' : 'none',
         transition: 'opacity 0.2s, transform 0.2s',
         position: "absolute",
-        top: "100%",
+        top: "120%",
         left: 0,
         background: "#fff",
         boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
@@ -48,7 +59,6 @@ const Navbar = () => {
 
     return (
         <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0", position: "relative" }}>
-            {/* Inline CSS for underline animation */}
             <style>{`
                 .nav-underline {
                     position: relative;
@@ -74,7 +84,6 @@ const Navbar = () => {
                     transform: translateX(-50%) scaleX(1);
                 }
             `}</style>
-            {/* Rainbow wave SVG at the bottom */}
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', height: '24px', pointerEvents: 'none', zIndex: 2 }}>
                 <svg viewBox="0 0 1440 24" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                     <defs>
@@ -92,14 +101,12 @@ const Navbar = () => {
                 </svg>
             </div>
             <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 2rem" }}>
-                {/* Logo or Brand */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <img src={navbarLogo} alt="Villa Jullienne Logo" style={{ height: '50px', width: 'auto', display: 'block' }} />
                     <span style={{ fontWeight: "bold", fontSize: "2.0rem" }}>
                         Villa Jullienne
                     </span>
                 </div>
-                {/* Navigation Links */}
                 <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", position: "relative" }}>
                     {navLinks.map((link) => (
                         <a
@@ -110,9 +117,10 @@ const Navbar = () => {
                             {link.label}
                         </a>
                     ))}
-                    <div style={{ position: "relative" }}
-                         onMouseEnter={() => setDropdownOpen(true)}
-                         onMouseLeave={() => setDropdownOpen(false)}
+                    <div
+                        style={{ position: "relative" }}
+                        onMouseEnter={handleDropdownEnter}
+                        onMouseLeave={handleDropdownLeave}
                     >
                         <a
                             href="#amenities"
