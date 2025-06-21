@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import calendarIcon from '../../static/assets/icons/calendar-event.svg';
 import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
+const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#villas", label: "Villas" },
+    { href: "#about", label: "About" },
+];
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    // Simple dropdown styles
+
+    // Dropdown styles remain unchanged
     const dropdownStyles = {
         opacity: dropdownOpen ? 1 : 0,
         transform: dropdownOpen ? 'translateY(0)' : 'translateY(-8px)',
@@ -39,23 +45,50 @@ const Navbar = () => {
     const dropdownItemHover = {
         background: '#f2f2f2',
     };
+
     return (
         <nav style={{ width: "100%", background: "#f8f9fa", padding: "1rem 0", position: "relative" }}>
+            {/* Inline CSS for underline animation */}
+            <style>{`
+                .nav-underline {
+                    position: relative;
+                    text-decoration: none;
+                    color: #333;
+                    padding-bottom: 2px;
+                    cursor: pointer;
+                }
+                .nav-underline::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%) scaleX(0);
+                    transform-origin: center;
+                    width: 100%;
+                    height: 2px;
+                    background: #f8b195;
+                    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+                }
+                .nav-underline:hover::after,
+                .nav-underline:focus::after {
+                    transform: translateX(-50%) scaleX(1);
+                }
+            `}</style>
             {/* Rainbow wave SVG at the bottom */}
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', height: '24px', pointerEvents: 'none', zIndex: 2 }}>
                 <svg viewBox="0 0 1440 24" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                     <defs>
                         <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#f8b195" />   {/* soft coral */}
-                            <stop offset="16%" stopColor="#f6eac2" />   {/* soft beige */}
-                            <stop offset="33%" stopColor="#b5ead7" />   {/* soft mint */}
-                            <stop offset="50%" stopColor="#c7ceea" />   {/* soft blue */}
-                            <stop offset="66%" stopColor="#a7c7e7" />   {/* muted blue */}
-                            <stop offset="83%" stopColor="#d4a5a5" />   {/* muted mauve */}
-                            <stop offset="100%" stopColor="#f8b195" />  {/* soft coral */}
+                            <stop offset="0%" stopColor="#f8b195" />
+                            <stop offset="16%" stopColor="#f6eac2" />
+                            <stop offset="33%" stopColor="#b5ead7" />
+                            <stop offset="50%" stopColor="#c7ceea" />
+                            <stop offset="66%" stopColor="#a7c7e7" />
+                            <stop offset="83%" stopColor="#d4a5a5" />
+                            <stop offset="100%" stopColor="#f8b195" />
                         </linearGradient>
                     </defs>
-                    <path d="M0,12 C360,36 1080,-12 1440,12 L1440,24 L0,24 Z" fill="url(#rainbow-gradient)"/>
+                    <path d="M0,12 C360,36 1080,-12 1440,12 L1440,24 L0,24 Z" fill="url(#rainbow-gradient)" />
                 </svg>
             </div>
             <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 2rem" }}>
@@ -68,13 +101,25 @@ const Navbar = () => {
                 </div>
                 {/* Navigation Links */}
                 <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", position: "relative" }}>
-                    <a href="#home" style={{ textDecoration: "none", color: "#333" }}>Home</a>
-                    <a href="#villas" style={{ textDecoration: "none", color: "#333" }}>Villas</a>
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="nav-underline"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                     <div style={{ position: "relative" }}
-                        onMouseEnter={() => setDropdownOpen(true)}
-                        onMouseLeave={() => setDropdownOpen(false)}
+                         onMouseEnter={() => setDropdownOpen(true)}
+                         onMouseLeave={() => setDropdownOpen(false)}
                     >
-                        <a href="#amenities" style={{ textDecoration: "none", color: "#333", position: "relative" }}>Amenities</a>
+                        <a
+                            href="#amenities"
+                            className="nav-underline"
+                        >
+                            Amenities
+                        </a>
                         <ul style={dropdownStyles}>
                             {[
                                 { href: "#restaurant", label: "Restaurant" },
@@ -82,7 +127,7 @@ const Navbar = () => {
                                 { href: "#artgallery", label: "Art Gallery" },
                                 { href: "#chapel", label: "Chapel" },
                                 { href: "#communalpool", label: "Communal Pool" },
-                            ].map((item, idx) => (
+                            ].map((item) => (
                                 <li key={item.href} style={{ margin: 0 }}>
                                     <a
                                         href={item.href}
@@ -96,8 +141,11 @@ const Navbar = () => {
                             ))}
                         </ul>
                     </div>
-                    <a href="#about" style={{ textDecoration: "none", color: "#333" }}>About</a>
-                    <a href="#booknow" style={{ textDecoration: "none", color: "#333", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <a
+                        href="#booknow"
+                        className="nav-underline"
+                        style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+                    >
                         Book Now
                         <img src={calendarIcon} alt="Book Now" style={{ width: '20px', height: '20px', verticalAlign: 'middle' }} />
                     </a>
