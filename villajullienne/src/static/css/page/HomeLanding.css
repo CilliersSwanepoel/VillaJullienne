@@ -1,20 +1,30 @@
+/* Ensure body doesn't interfere with layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Full-width welcome container */
 .welcome-container {
   position: relative;
-  width: 100%;
-  max-width: 1500px; /* Match navbar width */
-  height: 90vh;
-  margin: 0 auto;
+  width: 100vw;         /* Full viewport width */
+  height: 90vh;         /* Adjust as needed */
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
+/* Fullscreen background image */
 .welcome-image {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   display: block;
   border-radius: 0;
 }
 
+/* Centered welcome message box */
 .welcome-message {
   position: absolute;
   top: 50%;
@@ -23,12 +33,20 @@
   font-size: 1.6rem;
   color: white;
   text-align: center;
-  background-color: rgba(172, 172, 172, 0.24);
-  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   padding: 2rem 2.5rem;
   font-family: 'Playfair Display', serif;
   z-index: 2;
-  width:80%;
+  width: 80%;
   max-width: 500px;
+}
+
+/* Responsive text sizing */
+@media (max-width: 600px) {
+  .welcome-message {
+    font-size: 1.2rem;
+    padding: 1.5rem 2rem;
+  }
 }
