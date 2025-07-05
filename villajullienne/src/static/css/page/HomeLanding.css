@@ -1,21 +1,18 @@
-/* Ensure body doesn't interfere with layout */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* Full-width welcome container */
 .welcome-container {
   position: relative;
-  width: 100vw;         /* Full viewport width */
-  height: 90vh;         /* Adjust as needed */
+  width: 100vw;
+  height: 90vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* Fullscreen background image */
 .welcome-image {
   width: 100%;
   height: 100%;
@@ -24,7 +21,6 @@ html, body {
   border-radius: 0;
 }
 
-/* Centered welcome message box */
 .welcome-message {
   position: absolute;
   top: 50%;
@@ -33,9 +29,9 @@ html, body {
   font-size: 1.6rem;
   color: white;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(3px);
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
   padding: 2rem 2.5rem;
   font-family: 'Playfair Display', serif;
   z-index: 2;
@@ -43,7 +39,6 @@ html, body {
   max-width: 500px;
 }
 
-/* Responsive text sizing */
 @media (max-width: 600px) {
   .welcome-message {
     font-size: 1.2rem;
@@ -52,44 +47,62 @@ html, body {
 }
 
 .room-overview-container {
-  max-width: 700px;
+  max-width: 1100px;
   margin: 4rem auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: #ffffff;
+  padding: 1rem;
+}
 
+.carousel-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.carousel-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.carousel-box {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
   box-shadow:
-          0 25px 50px rgba(0, 0, 0, 0.35),      /* deep strong shadow */
-          0 0 30px rgba(98, 141, 200, 0.2);      /* subtle blue glow ring */
-
-  transform: translateY(0);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+          0 25px 50px rgba(0, 0, 0, 0.35),
+          0 0 30px rgba(98, 141, 200, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .gradient-heading {
   font-weight: 700;
-  font-size: 2rem; /* adjust for h2 or h3 */
-  background: linear-gradient(to right, #628dc8, #f58b7c); /* Match navbar gradient */
+  font-size: 3rem;
+  background: linear-gradient(to right, #628dc8, #f58b7c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-
-  text-align: center;    /* Center the text */
-  display: block;        /* Ensure it behaves like a block element */
-  margin: 0 auto 0.5rem; /* Auto-center and add spacing below */
+  text-align: center;
+  display: block;
+  margin: 0 auto 0.5rem;
 }
 
 .subheading {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   color: #444;
   margin-bottom: 1rem;
   font-weight: 500;
-
-  text-align: center;    /* Center the subheading text */
+  text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-
