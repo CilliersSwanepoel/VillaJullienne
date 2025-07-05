@@ -21,9 +21,7 @@ const HomeLanding = () => (
             <div className="carousel-text-wrapper">
                 <div className="carousel-text">
                     <h2 className="gradient-heading fade-in">UNWIND IN SERENE COMFORT</h2>
-                    <p className="subheading fade-in">
-                        Discover the tranquil charm of our Units — where elegance meets relaxation.
-                    </p>
+                    <p className="subheading fade-in">Discover the tranquil charm of our Units — where elegance meets relaxation.</p>
                 </div>
 
                 <div className="carousel-box fade-in">
@@ -59,6 +57,29 @@ const HomeLanding = () => (
                 </Button>
             </div>
         </div>
+
+        <div className="feature-overview-container">
+            <div className="carousel-text-wrapper reverse">
+                <div className="carousel-box fade-in">
+                    <ReusableCarousel slides={[
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0147.jpg"},
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0148.jpg"},
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0149.jpg"},
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0150.jpg"},
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0151.jpg"},
+                        { image: "/src/static/assets/page/homelanding/IMG-20250630-WA0152.jpg"}
+                    ]} />
+                </div>
+
+                <div className="carousel-text fade-in">
+                    <h2 className="gradient-heading">RECONNECT AND RELAX IN THE HEART OF NELSPRUIT</h2>
+                    <p className="subheading">Enjoy a peaceful getaway with your loved ones at our family-friendly units, located just minutes from Nelspruit.
+                        Thoughtfully designed for comfort and convenience, our accommodations offer a perfect balance of tranquility and access to local attractions.</p>
+                </div>
+            </div>
+        </div>
+
+
     </>
 );
 
