@@ -11,6 +11,11 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.welcome-container.shrink {
+  height: 40vh;
 }
 
 .welcome-image {
@@ -19,6 +24,12 @@ html, body {
   object-fit: cover;
   display: block;
   border-radius: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.welcome-container.shrink .welcome-image {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .welcome-message {
@@ -37,6 +48,12 @@ html, body {
   z-index: 2;
   width: 80%;
   max-width: 500px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.welcome-container.shrink .welcome-message {
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0.85;
 }
 
 @media (max-width: 600px) {
@@ -65,10 +82,18 @@ html, body {
   padding: 0 1rem;
 }
 
+.carousel-text-wrapper.reverse {
+  flex-direction: row-reverse;
+}
+
 .carousel-text {
   flex: 1;
   min-width: 280px;
   max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .carousel-box {
@@ -97,7 +122,7 @@ html, body {
 }
 
 .subheading {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: #444;
   margin-bottom: 1rem;
   font-weight: 500;
@@ -106,10 +131,3 @@ html, body {
   margin-left: auto;
   margin-right: auto;
 }
-
-.carousel-text-wrapper {
-  align-items: center;
-}
-
-
-
