@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "/src/static/css/page/HomeLanding.css";
 import ReusableCarousel from "../elements/Carousel.jsx";
 import Button from "react-bootstrap/Button";
+import Footer from "../elements/Footer.jsx";
 
 const HomeLanding = () => {
     const [shrink, setShrink] = useState(false);
@@ -33,7 +34,7 @@ const HomeLanding = () => {
                     <div className="carousel-text">
                         <h2 className="gradient-heading fade-in">UNWIND IN SERENE COMFORT</h2>
                         <p className="subheading fade-in">
-                            Discover the tranquil charm of our Units — where elegance meets relaxation.
+                            Discover the tranquil charm of our Units—where elegance meets relaxation. Unwind in thoughtfully designed spaces, each offering a serene escape from the everyday.
                         </p>
                     </div>
 
@@ -94,7 +95,27 @@ const HomeLanding = () => {
                         </p>
                     </div>
                 </div>
+                <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", marginBottom: "2rem" }}>
+                    <Button
+                        href="#"
+                        style={{
+                            padding: "1.2rem 6rem",
+                            background: "linear-gradient(to right, #628dc8, #f58b7c)",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: "30px",
+                            fontWeight: "bold",
+                            fontSize: "1.1rem",
+                            boxShadow: "0 4px 12px rgba(40, 80, 200, 0.15)",
+                            transition: "background 0.3s",
+                        }}
+                    >
+                        Check Out Our About Page
+                    </Button>
+                </div>
             </div>
+
+            <Footer/>
         </>
     );
 };

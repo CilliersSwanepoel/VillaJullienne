@@ -104,7 +104,7 @@ const Navbar = () => {
                 right: 0,
                 bottom: 0,
                 width: '100%',
-                height: '24px',
+                height: '30px',
                 pointerEvents: 'none',
                 zIndex: 1
             }}>
@@ -158,7 +158,6 @@ const Navbar = () => {
                         <ul style={dropdownStyles}>
                             {[
                                 { href: "#restaurant", label: "Restaurant" },
-                                { href: "#salon", label: "Salon" },
                                 { href: "#artgallery", label: "Art Gallery" },
                                 { href: "#chapel", label: "Chapel" },
                                 { href: "#communalpool", label: "Communal Pool" },
