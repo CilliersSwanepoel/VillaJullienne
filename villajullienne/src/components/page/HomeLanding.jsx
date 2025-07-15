@@ -32,7 +32,7 @@ const HomeLanding = () => {
             <div className="room-overview-container">
                 <div className="carousel-text-wrapper">
                     <div className="carousel-text">
-                        <h2 className="gradient-heading fade-in">UNWIND IN SERENE COMFORT</h2>
+                        <h2 className="gradient-heading fade-in">Unwind in Serene Comfort</h2>
                         <p className="subheading fade-in">
                             Discover the tranquil charm of our Units—where elegance meets relaxation. Unwind in thoughtfully designed spaces, each offering a serene escape from the everyday.
                         </p>
@@ -111,6 +111,49 @@ const HomeLanding = () => {
                         }}
                     >
                         Check Out Our About Page
+                    </Button>
+                </div>
+            </div>
+
+            <div className="spotlight-overview-container">
+                <div className="carousel-text-wrapper">
+                    <div className="carousel-text">
+                        <h2 className="gradient-heading fade-in">Book Your Escape & Make Memories at Villa Jullienne</h2>
+                        <p className="subheading fade-in">
+                            Create unforgettable memories in our elegant and tranquil retreat. Indulge in exceptional amenities and breathtaking surroundings for the ultimate escape.
+                        </p>
+                    </div>
+
+                    <div className="carousel-box fade-in">
+                        <ReusableCarousel
+                            slides={[
+                                { image: "/src/static/assets/page/homelanding/blue.jpg" },
+                                { image: "/src/static/assets/page/homelanding/ocean.jpg" },
+                                { image: "/src/static/assets/page/homelanding/orange.jpg" },
+                                { image: "/src/static/assets/page/homelanding/purple.jpg" },
+                                { image: "/src/static/assets/page/homelanding/red.jpg" },
+                                { image: "/src/static/assets/page/homelanding/yellow.jpg" }
+                            ]}
+                        />
+                    </div>
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", marginBottom: "2rem" }}>
+                    <Button
+                        href="#"
+                        style={{
+                            padding: "1.2rem 6rem",
+                            background: "linear-gradient(to right, #628dc8, #f58b7c)",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: "30px",
+                            fontWeight: "bold",
+                            fontSize: "1.1rem",
+                            boxShadow: "0 4px 12px rgba(40, 80, 200, 0.15)",
+                            transition: "background 0.3s",
+                        }}
+                    >
+                        Explore Units
                     </Button>
                 </div>
             </div>

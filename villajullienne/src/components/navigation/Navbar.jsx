@@ -120,7 +120,7 @@ const Navbar = () => {
                             <stop offset="100%" stopColor="#f8b195" />
                         </linearGradient>
                     </defs>
-                    <path d="M0,12 C360,36 1080,-12 1440,12 L1440,24 L0,24 Z" fill="url(#rainbow-gradient)" />
+                    <path d="M0,4 C360,36 1080,-16 1440,18 L1440,24, L0,24 Z" fill="url(#rainbow-gradient)" />
                 </svg>
             </div>
 
