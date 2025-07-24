@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import calendarIcon from '../../static/assets/icons/calendar-event.svg';
 import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
 const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#villas", label: "Villas" },
-    { href: "#about", label: "About" },
+    { href: "/", label: "Home", isRoute: true },
+    { href: "#villas", label: "Villas", isRoute: false },
+    { href: "/about", label: "About", isRoute: true },
 ];
 
 const Navbar = () => {
@@ -64,7 +65,7 @@ const Navbar = () => {
             width: "100%",
             background: "#f8f9fa",
             padding: "1rem 0",
-            position: "fixed",   // ✅ stays on top during scroll
+            position: "fixed",
             top: 0,
             left: 0,
             right: 0,
@@ -136,17 +137,23 @@ const Navbar = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <img src={navbarLogo} alt="Villa Jullienne Logo" style={{ height: '50px', width: 'auto', display: 'block' }} />
                     <span style={{ fontWeight: "bold", fontSize: "2.0rem" }}>
-            Villa Jullienne
-          </span>
+                        Villa Jullienne
+                    </span>
                 </div>
 
                 {/* Navigation Links */}
                 <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", position: "relative" }}>
-                    {navLinks.map((link) => (
-                        <a key={link.href} href={link.href} className="nav-underline">
-                            {link.label}
-                        </a>
-                    ))}
+                    {navLinks.map((link) =>
+                        link.isRoute ? (
+                            <Link key={link.href} to={link.href} className="nav-underline">
+                                {link.label}
+                            </Link>
+                        ) : (
+                            <a key={link.href} href={link.href} className="nav-underline">
+                                {link.label}
+                            </a>
+                        )
+                    )}
 
                     {/* Dropdown */}
                     <div

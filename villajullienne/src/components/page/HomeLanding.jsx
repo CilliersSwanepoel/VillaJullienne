@@ -16,7 +16,7 @@ const HomeLanding = () => {
     }, []);
 
     return (
-        <>
+        <div style={{ marginTop: '80px' }}>
             <div className={`welcome-container${shrink ? " shrink" : ""}`}>
                 <img
                     src="/src/static/assets/page/homelanding/top_view.jpg"
@@ -159,7 +159,7 @@ const HomeLanding = () => {
             </div>
 
             <Footer/>
-        </>
+        </div>
     );
 };
 
