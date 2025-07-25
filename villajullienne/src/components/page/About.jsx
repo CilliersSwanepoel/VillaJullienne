@@ -28,8 +28,6 @@ function About() {
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>What Facilities We Offer</Accordion.Header>
                     <Accordion.Body>
-                        <h6>Your Mpumalanga Retreat</h6>
-                        <br/>
                         Nestled between White River and Nelspruit, Elyon Panorama Village offers a unique escape in the heart of Mpumalanga.
                         <br/>
                         <br/>
