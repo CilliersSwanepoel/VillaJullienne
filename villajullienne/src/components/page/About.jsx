@@ -48,7 +48,7 @@ function About() {
                         <ul>
                             <li><b>Corporate Retreats:</b> Our inspiring setting is perfect for team-building activities and year-end functions.</li>
                             <li><b>Nature Enthusiasts:</b> Explore the natural beauty of Mpumalanga with easy access to hiking trails and stunning vistas.</li>
-                            <li><b>Travelers: Conveniently</b> located for exploring the region, including the iconic Kruger National Park.</li>
+                            <li><b>Travelers:</b> Conveniently located for exploring the region, including the iconic Kruger National Park.</li>
                         </ul>
                         <br/>
                         Elyon Panorama Village offers a memorable escape, whether you seek adventure, relaxation, or a unique blend of both. Come experience the magic of Mpumalanga.
@@ -79,6 +79,20 @@ function About() {
                         culpa qui officia deserunt mollit anim id est laborum.
                     </Accordion.Body>
                 </Accordion.Item>
+
+                <Accordion.Item eventKey="4">
+                    <Accordion.Header>How to Book Your Stay</Accordion.Header>
+                    <Accordion.Body>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.
+                    </Accordion.Body>
+                </Accordion.Item>
+
             </Accordion>
         </div>
     );

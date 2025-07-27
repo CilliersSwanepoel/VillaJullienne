@@ -5,7 +5,7 @@ import navbarLogo from '../../static/assets/icons/navbar-logo.png';
 
 const navLinks = [
     { href: "/", label: "Home", isRoute: true },
-    { href: "#villas", label: "Villas", isRoute: false },
+    { href: "/villas", label: "Villas", isRoute: false },
     { href: "/about", label: "About", isRoute: true },
 ];
 

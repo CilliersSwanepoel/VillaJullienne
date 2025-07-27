@@ -97,7 +97,7 @@ const HomeLanding = () => {
                 </div>
                 <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", marginBottom: "2rem" }}>
                     <Button
-                        href="#"
+                        href="/about"
                         style={{
                             padding: "1.2rem 6rem",
                             background: "linear-gradient(to right, #628dc8, #f58b7c)",
