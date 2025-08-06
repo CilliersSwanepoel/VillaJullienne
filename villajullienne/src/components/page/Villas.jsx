@@ -1,24 +1,40 @@
 import React from 'react';
-import '../../static/css/page/Villas.css';
-import TopView from '../../static/assets/page/homelanding/top_view.jpg';
+import TopView from '../../static/assets/page/villas/WhatsApp Image 2025-07-01 at 08.16.47_eb7ebe11.jpg';
 
 function Villas() {
     return (
         <div style={{ marginTop: 80 }}>
-            <div className='villas-welcome-message-container' style={{
-                backgroundImage: `url(${TopView})`,
-                position: 'relative',
-                width: '100vw',
-                height: '90vh',
-                margin: 0,
-                padding: 0,
-                overflow: 'hidden',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-            }}>
-                <h1 className='villas-welcome-message-title'>Our Units @ Villa Jullienne</h1>
-                <h2 className='villas-welcome-message-description'></h2>
+            <div
+                style={{
+                    position: 'relative',
+                    width: '100vw',
+                    height: '40vh',
+                    margin: 0,
+                    padding: 0,
+                    overflow: 'hidden',
+                }}
+            >
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: '-10px',
+                        left: '-10px',
+                        width: 'calc(100% + 20px)',
+                        height: 'calc(100% + 20px)',
+                        backgroundImage: `url(${TopView})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        filter: 'blur(4px) brightness(1.0)',
+                        zIndex: 0
+                    }}
+                />
+                <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+                    <h1 style={{ color: '#fff', margin: 0, padding: '1em', fontSize: '6rem' }}>
+                        Our Units @ Villa Jullienne
+                    </h1>
+                    <h2 style={{ color: '#fff', margin: 0, padding: '0 1em' }}></h2>
+                </div>
             </div>
         </div>
     );
