@@ -1,5 +1,7 @@
 import React from 'react';
+import HFrame from '../elements/HorizontalFrame';
 import TopView from '../../static/assets/page/villas/WhatsApp Image 2025-07-01 at 08.16.47_eb7ebe11.jpg';
+import AmenitiesIcons from '../../static/assets/icons/AmenitiesIcons.png';
 
 function Villas() {
     return (
@@ -36,6 +38,9 @@ function Villas() {
                     <h2 style={{ color: '#fff', margin: 0, padding: '0 1em' }}></h2>
                 </div>
             </div>
+
+            <HFrame imageSrc={AmenitiesIcons} />
+
         </div>
     );
 }
