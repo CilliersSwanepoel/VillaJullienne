@@ -10,7 +10,7 @@ function HFrame({ imageSrc }) {
                         alt="Amenities"
                         style={{
                             width: '100%',
-                            height: '300px',
+                            height: '350px',
                             objectFit: 'contain',
                             display: 'block'
                         }}

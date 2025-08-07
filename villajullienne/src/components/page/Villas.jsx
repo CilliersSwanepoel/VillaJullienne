@@ -69,12 +69,12 @@ function Villas() {
                     padding: '3rem 2rem',
                 }}
             >
-                <Card image={OceanRoom} title="Unit 1 - Ciel Rouge" buttonText="Book Now" />
-                <Card image={OceanRoom} title="Unit 3 - Lumière Noire" buttonText="Book Now" />
-                <Card image={OceanRoom} title="Unit 5 - Bleu Nuit" buttonText="Book Now" />
-                <Card image={OceanRoom} title="Unit 8 - Violette Noire" buttonText="Book Now" />
-                <Card image={OceanRoom} title="Unit 9 - Rose Azur" buttonText="Book Now" />
-                <Card image={OceanRoom} title="Unit 10 - Vert Calme" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 1 - Ciel Rouge" subtitle="Description here" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 3 - Lumière Noire" subtitle="Description here" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 5 - Bleu Nuit" subtitle="Description here" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 8 - Violette Noire" subtitle="Description here" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 9 - Rose Azur" subtitle="Description here" buttonText="Book Now" />
+                <Card image={OceanRoom} title="Unit 10 - Vert Calme" subtitle="Description here" buttonText="Book Now" />
 
                 {/* Add more <Card /> components as needed */}
             </div>

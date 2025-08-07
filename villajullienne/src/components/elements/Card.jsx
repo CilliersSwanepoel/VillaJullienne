@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card({ image, title, buttonText }) {
+function Card({ image, title, subtitle, buttonText }) {
     return (
         <div
             style={{
@@ -35,6 +35,20 @@ function Card({ image, title, buttonText }) {
                 >
                     {title}
                 </h3>
+
+                {/* Only show subtitle if provided */}
+                {subtitle && (
+                    <h4
+                        style={{
+                            margin: '0.5rem 0',
+                            fontWeight: '500',
+                            fontSize: '1rem',
+                            color: '#666',
+                        }}
+                    >
+                        {subtitle}
+                    </h4>
+                )}
 
                 <button
                     style={{
