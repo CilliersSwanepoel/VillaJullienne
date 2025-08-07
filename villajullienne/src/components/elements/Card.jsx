@@ -1,38 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const Card = ({ image, title, buttonText, onButtonClick }) => {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1500);
-        return () => clearTimeout(timer);
-    }, []);
-
+function Card({ image, title, buttonText }) {
     return (
-        <div className="card position-relative" style={{ width: '18rem' }}>
-            {loading && (
-                <div
-                    className="position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
-                    style={{ background: 'rgba(255,255,255,0.7)', zIndex: 2, top: 0, left: 0 }}
+        <div
+            style={{
+                maxWidth: '320px',
+                borderRadius: '1.2rem',
+                overflow: 'hidden',
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
+                backgroundColor: '#fff',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'transform 0.3s ease',
+            }}
+        >
+            <img
+                src={image}
+                alt={title}
+                style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                }}
+            />
+
+            <div style={{ padding: '1rem', textAlign: 'center' }}>
+                <h3
+                    style={{
+                        margin: '0.5rem 0',
+                        fontWeight: '600',
+                        fontSize: '1.2rem',
+                        color: '#333',
+                    }}
                 >
-                    <div className="spinner-border text-primary" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            )}
-            <img src={image} className="card-img-top" alt="Card" />
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <button style={{ background: "linear-gradient(to right, #628dc8, #f58b7c)" }}
-                    className="btn btn-primary"
-                    onClick={onButtonClick}
-                    disabled={loading}
+                    {title}
+                </h3>
+
+                <button
+                    style={{
+                        marginTop: '0.8rem',
+                        padding: '0.6rem 1.2rem',
+                        background: 'linear-gradient(to right, #628dc8, #f58b7c)',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '2rem',
+                        cursor: 'pointer',
+                        fontWeight: 'bold',
+                        fontSize: '0.9rem',
+                        transition: 'background 0.3s ease',
+                    }}
                 >
                     {buttonText}
                 </button>
             </div>
         </div>
     );
-};
+}
 
 export default Card;
